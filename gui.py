@@ -10,8 +10,8 @@ class PDFGui:
         root = tkinter.Tk()
         root.title("Agarthan PDF Merger")
 
-        root.iconbitmap("Agarthan.ico")
-        bg = tkinter.PhotoImage(file="Agarthan.png")
+        root.iconbitmap("images\\Agarthan.ico")
+        bg = tkinter.PhotoImage(file="images\\Agarthan.png")
         canvas = tkinter.Canvas(root, width=800, height=500)
         canvas.pack(fill="both", expand=True)
         canvas.create_image(0,0, image=bg, anchor="nw")
