@@ -13,7 +13,6 @@ class PDFMerger:
                     continue
                 merger.append(f"{import_directory}\\{file}")
         elif import_files:
-            print('hi')
             for file in [i for i in import_files if ".pdf" in i]:
                 merger.append(file)
         else:
