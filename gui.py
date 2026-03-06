@@ -1,6 +1,17 @@
 import tkinter
 from tkinter.filedialog import askopenfilenames, askdirectory
 from pdf_merger import PDFMerger
+import os
+import sys
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 class PDFGui:
     def __init__(self) -> None:
@@ -10,8 +21,8 @@ class PDFGui:
         root = tkinter.Tk()
         root.title("Agarthan PDF Merger")
 
-        root.iconbitmap("images\\Agarthan.ico")
-        bg = tkinter.PhotoImage(file="images\\Agarthan.png")
+        root.iconbitmap(resource_path("Agarthan.ico"))
+        bg = tkinter.PhotoImage(file=resource_path("Agarthan.png"))
         canvas = tkinter.Canvas(root, width=800, height=500)
         canvas.pack(fill="both", expand=True)
         canvas.create_image(0,0, image=bg, anchor="nw")
